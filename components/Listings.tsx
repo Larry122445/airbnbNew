@@ -56,7 +56,6 @@ const Listings = ({ listings: items, category }: Props) => {
         renderItem={renderRow}
         data={loading ? [] : items}
         ref={listRef}
-        ListHeaderComponent={<Text style={styles.info}>{items.length} homes</Text>}
       />
     </View>
   );

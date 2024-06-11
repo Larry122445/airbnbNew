@@ -1,16 +1,32 @@
 import Colors from '@/constants/Colors';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Feather } from '@expo/vector-icons';
 import { View, StyleSheet, TextInput, Text, TouchableOpacity } from 'react-native';
 import { defaultStyles } from '@/constants/Styles';
+import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler';
 
 const Page = () => {
 
   return (
+    <GestureHandlerRootView>
+    <ScrollView>
     <View style={styles.container}>
+      <Text style={{
+          fontFamily: 'mon-sb',
+          paddingBottom: 2
+      }}>KNUST Email Address</Text>
       <TextInput
         autoCapitalize="none"
-        placeholder="Email"
-        style={[defaultStyles.inputField, { marginBottom: 30 }]}
+        placeholder="name@gmail.com"
+        style={[defaultStyles.inputField, { marginBottom: 20, height: 55 }]}
+      />
+      <Text style={{
+          fontFamily: 'mon-sb',
+          paddingTop: 5
+      }}>Password</Text>
+      <TextInput
+        autoCapitalize="none"
+        placeholder="name@gmail.com"
+        style={[defaultStyles.inputField, { marginBottom: 23, height: 55 }]}
       />
 
       <TouchableOpacity style={defaultStyles.btn}>
@@ -37,7 +53,7 @@ const Page = () => {
 
       <View style={{ gap: 20 }}>
         <TouchableOpacity style={styles.btnOutline}>
-          <Ionicons name="mail-outline" size={24} style={defaultStyles.btnIcon} />
+          <Feather name="phone" size={24} style={defaultStyles.btnIcon} />
           <Text style={styles.btnOutlineText}>Continue with Phone</Text>
         </TouchableOpacity>
 
@@ -57,6 +73,8 @@ const Page = () => {
         </TouchableOpacity>
       </View>
     </View>
+    </ScrollView>
+    </GestureHandlerRootView>
   );
 };
 
@@ -68,7 +86,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 26,
   },
-
   seperatorView: {
     flexDirection: 'row',
     gap: 10,

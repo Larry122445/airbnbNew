@@ -3,39 +3,27 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NativeViewGestureHandler } from 'react-native-gesture-handler';
 import { useRef, useState } from 'react';
 import Colors from '@/constants/Colors';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { Link } from 'expo-router';
 
 const categories = [
   {
-    name: 'Tiny homes',
-    icon: 'home',
-  },
-  {
-    name: 'Cabins',
-    icon: 'house-siding',
-  },
-  {
     name: 'Trending',
     icon: 'local-fire-department',
   },
   {
-    name: 'Play',
-    icon: 'videogame-asset',
+    name: 'Homestels',
+    icon: 'home',
   },
   {
-    name: 'City',
+    name: 'Hostels',
     icon: 'apartment',
   },
   {
-    name: 'Beachfront',
-    icon: 'beach-access',
-  },
-  {
-    name: 'Countryside',
-    icon: 'nature-people',
+    name: 'Campus',
+    icon: 'school',
   },
 ];
 
@@ -59,22 +47,27 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
   };
 
   return (
+    <SafeAreaView>
       <View style={styles.container}>
+        <View>
+          <Text style={{ fontFamily: 'mon-b',
+            padding: 5
+          }}>
+            KWAME NKRUMAH UNIVERSITY OF SCIENCE & TECHNOLOGY
+          </Text>
+        </View>
         <View style={styles.actionRow}>
           <Link href={'/(modals)/booking'} asChild>
             <TouchableOpacity>
               <View style={styles.searchBtn}>
-                <Ionicons name="search" size={24} />
+              <AntDesign name="search1" size={24} />
                 <View>
                   <Text style={{ fontFamily: 'mon-sb' }}>Where to?</Text>
-                  <Text style={{ color: Colors.grey, fontFamily: 'mon' }}>Anywhere · Any week</Text>
+                  <Text style={{ color: Colors.grey, fontFamily: 'mon' }}>Anywhere · Any week · Anytime</Text>
                 </View>
               </View>
             </TouchableOpacity>
           </Link>
-          <TouchableOpacity style={styles.filterBtn}>
-            <Ionicons name="options-outline" size={24} />
-          </TouchableOpacity>
         </View>
 
         <GestureHandlerRootView style={{ flex: 1 }}>
@@ -84,8 +77,8 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
             alignItems: 'center',
-            gap: 33,
-            paddingHorizontal: 10,
+            gap: 40,
+            paddingHorizontal: 25,
           }}>
           {categories.map((item, index) => (
             <TouchableOpacity
@@ -96,7 +89,7 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
               >
               <MaterialIcons
                 name={item.icon as any}
-                size={24}
+                size={23}
                 color={activeIndex === index ? '#000' : Colors.grey}
               />
               <Text style={activeIndex === index ? styles.categoryTextActive : styles.categoryText} >
@@ -107,16 +100,15 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
         </ScrollView>
         </GestureHandlerRootView>
       </View>
-    
+      </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    paddingTop: 8,
-    paddingBottom: 5,
-    height: 143,
+    paddingTop: 5,
+    height: 173,
     elevation: 8,
     shadowColor: '#000',
     shadowOpacity: 0.1,
@@ -138,9 +130,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flexDirection: 'row',
     gap: 8,
-    padding: 14,
+    padding: 12,
     alignItems: 'center',
-    width: 280,
+    width: 360,
+    height: 50,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#c2c2c2',
     borderRadius: 30,
@@ -152,12 +145,6 @@ const styles = StyleSheet.create({
       width: 1,
       height: 5,
     },
-  },
-  filterBtn: {
-    padding: 13,
-    borderWidth: 1,
-    borderColor: '#A2A0A2',
-    borderRadius: 24,
   },
   categoryText: {
     fontSize: 13,
@@ -175,7 +162,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingBottom: 5,
   },
   categoriesBtnActive: {
     flex: 1,
@@ -183,7 +169,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderBottomColor: '#000',
     borderBottomWidth: 2,
-    paddingBottom: 8,
+    paddingBottom: 5,
   },
 });
 

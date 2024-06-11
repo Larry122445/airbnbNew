@@ -1,14 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { defaultStyles } from '@/constants/Styles';
 
 const WishlistScreen = () => {
   return (
+    <SafeAreaView style={defaultStyles.container}>
     <View style={styles.title}>
       <Text style={styles.subheading}>Create your first wishlist</Text>
       <Text style={styles.instructions}>
         As you search, tap the heart icon to save your favorite places to stay or etc.
       </Text>
     </View>
+    </SafeAreaView>
   );
 };
 

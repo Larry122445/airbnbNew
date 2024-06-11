@@ -8,6 +8,6 @@ export default {
     background: '#1A1A1A',
     text: '#ffffff',
   },
-  primary: '#ff385c',
+  primary: '#11C3C3',
   grey: '#5e5d5e',
 };

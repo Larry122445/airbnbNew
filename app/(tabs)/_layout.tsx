@@ -3,12 +3,13 @@ import React from 'react';
 import { Tabs } from 'expo-router';
 import  Colors  from '@/constants/Colors';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, AntDesign, EvilIcons } from '@expo/vector-icons';
 import  FontAwesome5  from '@expo/vector-icons/FontAwesome5';
 
 
 const Layout = () => {
   return (
+
     <Tabs screenOptions={{
       tabBarActiveTintColor: Colors.primary,
       tabBarLabelStyle: {
@@ -18,35 +19,32 @@ const Layout = () => {
       <Tabs.Screen name='index' options={{
         tabBarLabel: 'Explore',
         tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search" size={size} color={color} />
+            <AntDesign name="search1" size={size} color={color} />
         ),
       }} />
-       <Tabs.Screen name='wishlist' options={{
-        tabBarLabel: 'Wishlist',
+       <Tabs.Screen name='bookings' options={{
+        tabBarLabel: 'Bookings',
         tabBarIcon: ({ color, size }) => (
-          <Ionicons name='heart-outline' color={color} size={size}/>
+          <EvilIcons name='heart' color={color} size={35}/>
         ),
       }} />
-      <Tabs.Screen name='trips' options={{
-        tabBarLabel: 'Trips',
+      <Tabs.Screen name='bookmarks' options={{
+        tabBarLabel: 'Bookmarks',
+        headerShown: false,
         tabBarIcon: ({ color, size }) => (
-          <FontAwesome5 name='airbnb' color={color} size={size}/>
-        ),
-      }} />
-      <Tabs.Screen name='inbox' options={{
-        tabBarLabel: 'Inbox',
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name='message-outline' color={color} size={size}/>
+          <Ionicons name='bookmarks-outline' color={color} size={27}/>
         ),
       }} />
        <Tabs.Screen name='profile' options={{
         tabBarLabel: 'Profile',
+        headerShown: false,
         tabBarIcon: ({ color, size }) => (
-          <Ionicons name='person-circle-outline' color={color} size={size}/>
+          <EvilIcons name='user' color={color} size={36}/>
         ),
       }} />
     </Tabs>
   );
 };
+
 
 export default Layout;
