@@ -1,0 +1,39 @@
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+const WishlistScreen = () => {
+  return (
+    <View style={styles.title}>
+      <Text style={styles.subheading}>Create your first wishlist</Text>
+      <Text style={styles.instructions}>
+        As you search, tap the heart icon to save your favorite places to stay or etc.
+      </Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  title: {
+    fontFamily: 'mon-b',
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#000',
+    marginTop: 20,
+    marginLeft: 10,
+  },
+  subheading: {
+    fontFamily: 'mon-b',
+    fontSize: 35,
+    color: '#000',
+    marginTop: 10,
+    marginLeft: 10,
+  },
+  instructions: {
+    fontSize: 16,
+    color: '#888',
+    marginTop: 10,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+});
+export default WishlistScreen;
