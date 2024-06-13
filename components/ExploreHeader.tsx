@@ -47,10 +47,11 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
   };
 
   return (
+    <SafeAreaView>
       <View style={styles.container}>
         <View>
           <Text style={{ fontFamily: 'mon-b',
-            padding: 10
+            padding: 10,textAlign:'center'
           }}>
             KWAME NKRUMAH UNIVERSITY OF SCIENCE & TECHNOLOGY
           </Text>
@@ -99,6 +100,7 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
         </ScrollView>
         </GestureHandlerRootView>
       </View>
+      </SafeAreaView>
     
   );
 };
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingTop: 8,
     paddingBottom: 6,
-    height: 167,
+    height: 180,
     elevation: 8,
     shadowColor: '#000',
     shadowOpacity: 0.1,
@@ -143,7 +145,7 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     shadowOffset: {
       width: 1,
-      height: 5,
+      height: 3,
     },
   },
   categoryText: {

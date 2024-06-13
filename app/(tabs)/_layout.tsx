@@ -33,7 +33,7 @@ const Layout = () => {
           <Ionicons name='bookmarks-outline' color={color} size={27}/>
         ),
       }} />
-       <Tabs.Screen name='profile' options={{
+       <Tabs.Screen name='Profile' options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({ color, size }) => (
           <EvilIcons name='user' color={color} size={36}/>
