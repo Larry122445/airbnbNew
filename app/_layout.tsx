@@ -1,4 +1,3 @@
-
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack, useRouter } from 'expo-router';
 import { useEffect } from 'react';
@@ -7,9 +6,10 @@ import * as SecureStore from 'expo-secure-store';
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 import { TouchableOpacity } from 'react-native';
-
+import ModalHeaderText from '@/components/ModalHeaderText';
 
 const CLERK_PUBLISHABLE_KEY = 'pk_test_Z29yZ2VvdXMtd2Vhc2VsLTM2LmNsZXJrLmFjY291bnRzLmRldiQ';
+
 // Cache the Clerk JWT
 const tokenCache = {
   async getToken(key: string) {
@@ -54,7 +54,7 @@ export default function RootLayout() {
   }
 
   return (
-    <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY!} tokenCache={tokenCache}>
+    <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY} tokenCache={tokenCache}>
       <RootLayoutNav />
     </ClerkProvider>
   );
@@ -91,6 +91,7 @@ function RootLayoutNav() {
           presentation: 'transparentModal',
           animation: 'fade',
           headerTransparent: true,
+          headerTitle: () => <ModalHeaderText />,
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => router.back()}

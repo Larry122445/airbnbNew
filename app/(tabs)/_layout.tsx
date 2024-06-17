@@ -2,9 +2,10 @@ import { View, Text } from 'react-native';
 import React from 'react';
 import { Tabs } from 'expo-router';
 import  Colors  from '@/constants/Colors';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Ionicons, AntDesign, EvilIcons } from '@expo/vector-icons';
 import  FontAwesome5  from '@expo/vector-icons/FontAwesome5';
+import { green } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
 
 
 const Layout = () => {
@@ -40,6 +41,13 @@ const Layout = () => {
         headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <EvilIcons name='user' color={color} size={36}/>
+        ),
+      }} />
+      <Tabs.Screen name='settings' options={{
+        tabBarLabel: 'Settings',
+        headerShown: false,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialIcons name="settings" size={24} color={color} />
         ),
       }} />
     </Tabs>

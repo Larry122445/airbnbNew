@@ -51,7 +51,7 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
       <View style={styles.container}>
         <View>
           <Text style={{ fontFamily: 'mon-b',
-            padding: 5
+            padding: 5,textAlign:'center'
           }}>
             KWAME NKRUMAH UNIVERSITY OF SCIENCE & TECHNOLOGY
           </Text>
